@@ -1,14 +1,48 @@
 import { motion } from 'motion/react'
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 const Navbar = () => {
     const [toggolenav, setToggolenav] = useState(false)
+    const [showNavbar, setshowNavbar] = useState(true)
+    const [lastScrollY, setlastScrollY] = useState(0);
+    const navRef = useRef();
     const links = ["Services", "Our work", "About us", "Insights"]
 
+    useEffect(() => {
+        function handleScroll() {
+            const currentScrollY = window.scrollY;
+
+            if (currentScrollY > lastScrollY) setshowNavbar(false)
+            else setshowNavbar(true)
+
+            setlastScrollY(currentScrollY);
+        }
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        }
+    }, [lastScrollY])
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setIsScrolled(navRef.current.scrollTop > 10);
+        };
+        navRef.current.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
     return (
-        <>
-            <div className={`w-full py-5 px-15 flex justify-between relative z-40 ${toggolenav ? "bg-dark border-b-white border-b-[1px]" : "bg-white"} transition duration-500`}>
-                <div className="logo">
+        <motion.div
+            animate={{
+                y: showNavbar ? 0 : "-100%"
+            }}
+            ref={navRef}
+            className='fixed w-full top-0 left-0 z-50'
+        >
+            <div className={`w-full px-7 py-5 md:px-15 flex justify-between relative ${toggolenav ? "bg-dark border-b-white border-b-[1px]" : "backdrop-blur-md bg-transparent"} transition duration-500`}>
+                <div className="logo relative z-40">
                     <svg className={`${toggolenav ? "text-white" : ""} transition duration-500      `} width="72" height="30" viewBox="0 0 72 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M9.8393 10.2032C4.22951 10.3257 -0.0459221 14.7356 0.000372391 20.2752C0.0412204 25.3548 4.57808 30.3608 10.6862 29.9226C15.5145 29.5768 19.9015 25.4119 19.8525 20.0057C19.8035 14.5995 15.1904 10.0916 9.8393 10.2032ZM9.89649 25.7005C6.87101 25.7005 4.39834 23.1144 4.40924 19.9839C4.39525 19.2507 4.52792 18.522 4.79947 17.8407C5.07102 17.1594 5.47597 16.5392 5.99056 16.0164C6.50515 15.4937 7.11902 15.0789 7.79613 14.7966C8.47324 14.5142 9.19995 14.3698 9.93362 14.372C10.6673 14.3742 11.3931 14.5228 12.0686 14.8092C12.744 15.0956 13.3554 15.514 13.8668 16.0398C14.3783 16.5656 14.7796 17.1882 15.0471 17.8711C15.3146 18.554 15.4429 19.2834 15.4246 20.0166C15.4409 23.1008 12.9111 25.7059 9.88832 25.7005H9.89649Z" fill="currentColor"></path>
                         <path d="M62.8086 29.4855H67.1222V10.6372H62.8086V29.4855Z" fill="currentColor"></path>
@@ -19,7 +53,7 @@ const Navbar = () => {
                 </div>
                 <div className='lg:w-1/2'>
                     <nav className='hidden lg:flex lg:justify-between font-[NeueMontreal]'>
-                        <div className='flex gap-10'>
+                        <div className='flex gap-8'>
                             {
                                 links.map((value, index) =>
                                     <div key={index} className='h-[25px] overflow-hidden'>
@@ -45,7 +79,7 @@ const Navbar = () => {
                             </motion.a>
                         </div>
                     </nav>
-                    <div onClick={() => setToggolenav(!toggolenav)} className='w-[35px] aspect-square relative lg:hidden'>
+                    <div onClick={() => setToggolenav(!toggolenav)} className='w-[35px] aspect-square relative z-40 lg:hidden'>
                         <motion.span
                             animate={toggolenav ? { rotate: 45, translateY: 5.5, backgroundColor: "white" } : { rotate: 0, translateY: 0 }}
                             className='absolute top-[11px] inline-block w-full bg-dark h-[1.5px]'></motion.span>
@@ -54,26 +88,26 @@ const Navbar = () => {
                             className='absolute top-[22px] inline-block w-full bg-dark h-[1.5px]'></motion.span>
                     </div>
                 </div>
+                <motion.div
+                    animate={toggolenav ? { y: "100vh" } : {}}
+                    transition={{ duration: .5 }}
+                    className='lg:hidden h-screen w-screen absolute top-[-100vh] left-0 bg-dark px-5 py-5 pt-[20vh] z-10'>
+                    {
+                        links.map((value, index) =>
+                            <div key={index} className='h-[10vw] overflow-hidden text-white'>
+                                <motion.a
+                                    whileHover={{ translateY: "-50%" }}
+                                    className='block w-fit'
+                                    href="/">
+                                    <span className='block leading-none font-[FoundersGrotesk] uppercase text-[10vw]'>{value}</span>
+                                    <span className='block leading-none font-[FoundersGrotesk] uppercase text-[10vw]'>{value}</span>
+                                </motion.a>
+                            </div>
+                        )
+                    }
+                </motion.div>
             </div>
-            <motion.div
-                animate={toggolenav ? { translateY: "0vh" } : { translateY: "-100vh" }}
-                transition={{ duration: .5 }}
-                className='lg:hidden w-screen h-[100vh] bg-dark top-0 left-0 absolute px-5 pt-[20vh] z-10'>
-                {
-                    links.map((value, index) =>
-                        <div key={index} className='h-[10vw] overflow-hidden text-white'>
-                            <motion.a
-                                whileHover={{ translateY: "-50%" }}
-                                className='block w-fit'
-                                href="/">
-                                <span className='block leading-none font-[FoundersGrotesk] uppercase text-[10vw]'>{value}</span>
-                                <span className='block leading-none font-[FoundersGrotesk] uppercase text-[10vw]'>{value}</span>
-                            </motion.a>
-                        </div>
-                    )
-                }
-            </motion.div>
-        </>
+        </motion.div>
     )
 }
 

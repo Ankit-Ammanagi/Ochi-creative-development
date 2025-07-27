@@ -1,5 +1,6 @@
 @import 'tailwindcss';
 
+
 @font-face {
   font-family: 'NeueMontreal';
   src: url('./OchiFonts/NeueMontreal-Regular.woff2') format('woff2'),
@@ -14,5 +15,20 @@
 
 @theme {
   --color-dark: #212121;
-  --color-white:#f1f1f1;
+  --color-dull-white: #f1f1f1;
+  --color-dark-green: #004d43;
+  --color-dull-green: #cdea68;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  /* important */
+}
+
+.scrollContainer {
+  overflow: hidden;
 }
