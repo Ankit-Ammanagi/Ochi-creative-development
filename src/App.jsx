@@ -38,7 +38,7 @@ const App = () => {
       <Hero />
       <Marquee />
       <About />
-      <Cursorfollow
+      <Cursorfollow />
     </div>
   );
 };

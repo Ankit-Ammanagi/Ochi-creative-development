@@ -12,7 +12,7 @@ const Hero = () => {
                     <motion.div
                         animate={{ width: [0, "8.5vw"] }}
                         transition={{ duration: .5, ease: [.86, 0, .07, .995] }}
-                        className='w-[19vw] h-[9vw] md:w-[10.5vw] md:h-[6vw] lg:w-[8.5vw] lg:h-[5vw] inline-block mr-[1vw] rounded-xl overflow-hidden'>
+                        className='w-[19vw] h-[9.5vw] md:w-[10.5vw] md:h-[6.5vw] lg:w-[8.5vw] lg:h-[5.5vw] inline-block mr-[1vw] rounded-md overflow-hidden'>
                         <img className='w-full h-full object-cover object-center' src="./Images/heroText.jpg" alt="image" />
                     </motion.div>
                     eye-opening <br />presentations
@@ -39,11 +39,11 @@ const Hero = () => {
                             <motion.span
                                 onMouseEnter={() => setHover(!hover)}
                                 onMouseLeave={() => setHover(!hover)}
-                                className={`inline-block border rounded-full px-3 py-1 uppercase transition-all duration-300 ease-in-out text-sm z-10 ${hover ? "bg-dark text-white" : "bg-dull-white text-black"} `}>start the project</motion.span>
+                                className={`inline-block border rounded-full px-3 py-1 uppercase transition-all duration-300 ease-in-out text-sm z-10 text-center ${hover ? "bg-dark text-white" : "bg-dull-white text-black"} `}>start the project</motion.span>
                             <motion.i
                                 onMouseEnter={() => setHover(!hover)}
                                 onMouseLeave={() => setHover(!hover)}
-                                className={`ri-arrow-right-up-long-line border rounded-full p-2 ml-4 origin-center transition-all duration-300 ease-in-out relative overflow-hidden ${hover ? "text-white bg-dark" :"text-black bg-white"} `}>
+                                className={`ri-arrow-right-up-long-line border rounded-full p-1.5 ml-2 origin-center transition-all duration-300 ease-in-out relative overflow-hidden ${hover ? "text-white bg-dark" :"text-black bg-white"} `}>
                             </motion.i>
                         </a>
                     </div>
