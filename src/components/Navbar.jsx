@@ -39,7 +39,7 @@ const Navbar = () => {
                 y: showNavbar ? 0 : "-100%"
             }}
             ref={navRef}
-            className='fixed w-full top-0 left-0 z-50'
+            className='fixed w-screen top-0 left-0 z-50'
         >
             <div className={`w-full px-7 py-5 md:px-15 flex justify-between relative ${toggolenav ? "bg-dark border-b-white border-b-[1px]" : "backdrop-blur-md bg-transparent"} transition duration-500`}>
                 <div className="logo relative z-40">

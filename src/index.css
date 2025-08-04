@@ -19,16 +19,3 @@
   --color-dark-green: #004d43;
   --color-dull-green: #cdea68;
 }
-
-html,
-body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  overflow: hidden;
-  /* important */
-}
-
-.scrollContainer {
-  overflow: hidden;
-}

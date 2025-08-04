@@ -55,16 +55,16 @@ const Cursorfollow = () => {
                 <img src="./Images/eyebg.jpg" alt="" />
             </div>
             <div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex gap-5'>
-                <div className='w-50 bg-white  aspect-square rounded-full relative'>
+                <div className='w-20 md:w-30 lg:w-50 bg-white  aspect-square rounded-full relative'>
                     <div style={{ top: `${leftDarkPos.top + 30}%`, left: `${leftDarkPos.left + 30}%`, transform: 'translate(-50%,-50%)' }} className='w-[65%] aspect-square rounded-full relative top-1/2 left-1/2 bg-dark flex justify-center items-center overflow-hidden'>
-                        <div ref={eyeLeft} style={{ transform: `rotate(${rotateOne}deg)` }} className='w-full h-8'>
+                        <div ref={eyeLeft} style={{ transform: `rotate(${rotateOne}deg)` }} className='w-full h-4 md:h-6 lg:h-8'>
                             <div className='h-full aspect-square rounded-full bg-white'></div>
                         </div>
                     </div>
                 </div>
-                <div className='w-50 bg-white  aspect-square rounded-full relative'>
+                <div className='w-20 md:w-30 lg:w-50 bg-white  aspect-square rounded-full relative'>
                     <div style={{ top: `${rightDarkPos.top + 30}%`, left: `${rightDarkPos.left + 30}%`, transform: 'translate(-50%,-50%)' }} className='w-[65%] aspect-square rounded-full relative top-1/2 left-1/2 bg-dark flex justify-center items-center overflow-hidden'>
-                        <div ref={eyeRight} style={{ transform: `rotate(${rotateTwo}deg)` }} className='w-full h-8'>
+                        <div ref={eyeRight} style={{ transform: `rotate(${rotateTwo}deg)` }} className='w-full h-4 md:h-6 lg:h-8'>
                             <div className='h-full aspect-square rounded-full bg-white'></div>
                         </div>
                     </div>
