@@ -8,7 +8,6 @@ import LocomotiveScroll from 'locomotive-scroll';
 import 'remixicon/fonts/remixicon.css'
 
 
-
 const App = () => {
   const locomotiveScroll = new LocomotiveScroll();
 

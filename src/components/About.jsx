@@ -6,7 +6,7 @@ const About = () => {
     const [ishovered, setIshovered] = useState(false);
 
     return (
-        <div className='bg-dull-green py-20 rounded-t-2xl  font-[NeueMontreal]'>
+        <div data-scroll data-scroll-section data-scroll-speed="0.003" className='bg-dull-green py-20 rounded-t-2xl  font-[NeueMontreal]'>
             <div className='px-5'>
                 <h1 className='text-[4.4vw] leading-none mb-[6vw]'>
                     Ochi is a strategic presentation agency for forward-thinking businesses that need to <span className='underline'>rause funds</span>, <span className='underline'>sell products,</span> <span className='underline'>explain complex ideas,</span> and <span className='underline'>hire great people.</span>

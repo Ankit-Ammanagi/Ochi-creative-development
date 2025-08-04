@@ -50,7 +50,7 @@ const Cursorfollow = () => {
 
 
     return (
-        <div data-scroll className='w-full relative'>
+        <div data-scroll data-scroll-section data-scroll-speed="-0.15" className='w-full relative'>
             <div className='w-full'>
                 <img src="./Images/eyebg.jpg" alt="" />
             </div>

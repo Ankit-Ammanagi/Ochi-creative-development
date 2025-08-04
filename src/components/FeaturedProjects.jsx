@@ -39,7 +39,7 @@ const FeaturedProducts = () => {
     ]
 
     return (
-        <div className='w-full mt-5 font-[NeueMontreal]'>
+        <div data-scroll data-scroll-section data-scroll-speed="0.005" className='w-full mt-5 font-[NeueMontreal]'>
             <div className='w-full bg-dull-white sm:p-2 md:p-4 lg:p-6'>
                 <h1 className='text-xl pl-5 md:text-3xl lg:text-5xl mb-5'>Featured projects</h1>
                 <hr />

@@ -5,7 +5,7 @@ import { useState } from 'react'
 const Hero = () => {
     const [hover, setHover] = useState(false)
     return (
-        <div className='bg-dull-white w-full h-fit'>
+        <div data-scroll data-scroll-speed="-0.4" className='bg-dull-white w-full h-fit'>
             <div className='w-full py-10 md:py-20 pt-25 md:pt-40 px-[4vw] flex items-center relative'>
                 <h1 className='uppercase font-[FoundersGrotesk] text-[15vw] leading-[11vw] md:text-[10vw] lg:text-[9vw] md:leading-[7vw] lg:leading-[6.5vw] text-dark'>
                     we create <br />
@@ -43,7 +43,7 @@ const Hero = () => {
                             <motion.i
                                 onMouseEnter={() => setHover(!hover)}
                                 onMouseLeave={() => setHover(!hover)}
-                                className={`ri-arrow-right-up-long-line border rounded-full p-1.5 ml-2 origin-center transition-all duration-300 ease-in-out overflow-hidden relative z-10 border-black ${hover ? "text-white " :"text-black"} `}>
+                                className={`ri-arrow-right-up-long-line border rounded-full p-1.5 ml-2 origin-center transition-all duration-300 ease-in-out overflow-hidden relative z-0 border-black ${hover ? "text-white " :"text-black"} `}>
                                     <div className={`absolute top-1/2 left-1/2 -z-2 -translate-x-1/2 -translate-y-1/2 rounded-full aspect-square bg-dark transition-all duration-300 ${hover ? 'w-8' : 'w-0'}`}>
                                     </div>
                             </motion.i>
