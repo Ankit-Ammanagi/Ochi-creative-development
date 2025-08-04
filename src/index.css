@@ -3,14 +3,14 @@
 
 @font-face {
   font-family: 'NeueMontreal';
-  src: url('./OchiFonts/NeueMontreal-Regular.woff2') format('woff2'),
-    url('./OchiFonts/NeueMontreal-Regular.woff') format('woff');
+  src: url('/OchiFonts/NeueMontreal-Regular.woff2') format('woff2'),
+    url('/OchiFonts/NeueMontreal-Regular.woff') format('woff');
 }
 
 @font-face {
   font-family: 'FoundersGrotesk';
-  src: url('./OchiFonts/FoundersGrotesk-Semibold.woff2') format('woff2'),
-    url('./OchiFonts/FoundersGrotesk-Semibold.woff') format('woff');
+  src: url('/OchiFonts/FoundersGrotesk-Semibold.woff2') format('woff2'),
+    url('/OchiFonts/FoundersGrotesk-Semibold.woff') format('woff');
 }
 
 @theme {
