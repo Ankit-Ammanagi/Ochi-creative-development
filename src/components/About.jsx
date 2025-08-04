@@ -1,8 +1,12 @@
-import React from 'react'
+import { motion } from 'motion/react';
+import React, { useState } from 'react'
 
 const About = () => {
+
+    const [ishovered, setIshovered] = useState(false);
+
     return (
-        <div data-scroll data-scroll-speed="0.5" className='bg-dull-green py-20 rounded-t-2xl  font-[NeueMontreal]'>
+        <div className='bg-dull-green py-20 rounded-t-2xl  font-[NeueMontreal]'>
             <div className='px-5'>
                 <h1 className='text-[4.4vw] leading-none mb-[6vw]'>
                     Ochi is a strategic presentation agency for forward-thinking businesses that need to <span className='underline'>rause funds</span>, <span className='underline'>sell products,</span> <span className='underline'>explain complex ideas,</span> and <span className='underline'>hire great people.</span>
@@ -29,14 +33,19 @@ const About = () => {
             <div className='flex flex-col md:flex-row gap-10 justify-between px-10 py-5'>
                 <div className='md:w-1/2'>
                     <h1 className='font-bold text-2xl sm:text-4xl md:text-5xl mb-5'>Our approach:</h1>
-                    <a className='border rounded-full px-6 py-3 uppercase relative flex gap-2 items-center w-fit bg-dark text-white text-xs md:text-md' href="/">
-                        read more <div className={`w-3 h-3 bg-dull-white rounded-full`}></div>
-                        
+                    <a
+                        onMouseEnter={() => setIshovered(true)}
+                        onMouseLeave={() => setIshovered(false)}
+                        className='rounded-full py-4 pl-4 pr-10 uppercase relative flex items-center w-fit bg-dark text-white text-xs md:text-md group ' href="/">
+                        read more
+                        <div className={`w-2.5 absolute left-[75%] transition-all duration-500 group-hover:w-6 group-hover:-translate-x-[30%] aspect-square bg-dull-white rounded-full overflow-hidden flex items-center justify-center`}>
+                            <i className='ri-arrow-right-up-long-line hidden text-sm text-black transition-all duration-700 group-hover:flex'></i>
+                        </div>
                     </a>
                 </div>
-                <div className='md:w-1/2'>
-                    <div className='w-full rounded overflow-hidden'>
-                        <img className='w-full h-full object-cover object-center' src="./Images/ourstory.jpg" alt="approach" />
+                <div className='w-full md:w-1/2'>
+                    <div className={`w-full rounded overflow-hidden transition-transform duration-300 ${ishovered ? 'scale-95' : ''}`}>
+                        <img className={`w-full h-full object-cover object-center transition-transform duration-500 ${ishovered ? 'scale-125' :''}`} src="./Images/ourstory.jpg" alt="approach" />
                     </div>
                 </div>
             </div>

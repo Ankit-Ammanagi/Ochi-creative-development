@@ -5,6 +5,7 @@ import About from './components/About';
 import Cursorfollow from './components/Cursorfollow';
 import FeaturedProducts from './components/FeaturedProjects';
 import LocomotiveScroll from 'locomotive-scroll';
+import 'remixicon/fonts/remixicon.css'
 
 
 

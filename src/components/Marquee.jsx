@@ -5,7 +5,7 @@ import React from 'react'
 const Marquee = () => {
 
     return (
-        <div data-scroll data-scroll-speed="0.2" className='bg-dark-green w-full rounded-t-2xl text-dull-white font-[FoundersGrotesk] overflow-hidden'>
+        <div className='bg-dark-green w-full rounded-t-2xl text-dull-white font-[FoundersGrotesk] overflow-hidden'>
             <div className='flex py-10'>
                 {
                     [1, 2, 3].map((val) =>
